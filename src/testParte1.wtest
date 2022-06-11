@@ -1,0 +1,26 @@
+import pacientes.*
+import aparatos.*
+
+
+describe "Test Parte 1" {
+	const leonardo = new Paciente(edad=40,fortalezaMuscular=20, nivelDeDolor=10,rutina=[])
+	const milena = new Paciente(edad=3,fortalezaMuscular=50, nivelDeDolor=30,rutina=[])
+	
+	const magneto1 = new Magneto()
+	const bici1 = new Bicicleta()
+	const minitramp1 = new Minitramp()
+	
+	test "leonardo puede usar magneto1" {
+		assert.that(leonardo.puedeUsar(magneto1))
+	}
+	test "leonardo puede usar bici1" {
+		assert.that(leonardo.puedeUsar(bici1))
+	}
+	test "leonardo puede usar minitramp" {
+		assert.that(leonardo.puedeUsar(minitramp1))
+	}
+	test "milena no puede usar bici" {
+		assert.notThat(milena.puedeUsar(bici1))
+	}
+	
+}
